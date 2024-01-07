@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+
+    body{
+      background: linear-gradient(150deg, rgb(107, 99, 99), rgb(59, 47, 47));
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      user-select: none;
+    }
+    .calculator {
+      max-width: 350px;
+      margin: 0 auto;
+      padding: 0px;
+      border: none;
+      border-radius: 15px;
+      box-shadow: -5px -5px 15px rgb(60, 102, 79) ,5px 5px 15px rgb(38, 81, 87);
+      background-color: rgba(139, 133, 133, 0.938);
+      height: 560px;
+      overflow: hidden;
+      transition: 0.7s;
+    }
+    .calculator__display {
+      height: 90px;
+      width: 90%;
+      font-size: 3em;
+      font-family: cursive;
+      text-align: right;
+      margin-bottom: 10px;
+      padding: 20px;
+      background-color: transparent;
+      color: rgb(90, 88, 88);
+      border: none;
+      border-radius: 15px 10px 1px 1px;
+      overflow: hidden;
+    }
+    .calculator__row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    .button{
+      border: 0;
+      outline: 0;
+      width: 60px;
+      height: 60px;
+      border-radius:  19px;
+      box-shadow: -8px -8px 17px rgba(255, 255, 255, 0.164),5px 5px 17px rgb(0,0,0,0.2);
+      background: transparent;
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+      margin: 5px 12px;
+    }
+
+    .button:hover {
+      box-shadow: 1px 1px 5px transparent;
+      color: #d6d6d6;
+      transition: 0.2s;
+      background-color: transparent;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .button:active {
+      box-shadow: inset -8px -8px 15px rgb(255, 255, 255,0.1),inset 5px 5px 15px rgb(0,0,0,0.2);;
+      color: rgb(0, 255, 255);
+      transition: 0.2s;
+      background-color: transparent;
+      font-size: 99%;
+    }
+    #equal{
+      width: 150px;
+      color: rgb(0, 255, 255);
+    }
+    #op{
+    color: rgb(0, 255, 255);
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" class="calculator__display" id="display" name="display">
+    <div class="calculator__row">
+      <input type="button" value="AC" class="button" onclick="display.value = ''" id="op">
+      <input type="button" value="DEL" class="button"  onclick="display.value = display.value.toString().slice(0,-1) " id="op">
+      <input type="button" value="•" class="button" onclick="display.value += '.'" id="op">
+      <input type="button" value="÷" class="button" onclick="display.value += '/' " id="op">
+    </div>
+    <div class="calculator__row">
+      <input type="button" value="7" class="button" onclick="display.value += '7' ">
+      <input type="button" value="8" class="button" onclick="display.value += '8' ">
+      <input type="button" value="9" class="button" onclick="display.value += '9' ">
+      <input type="button" value="X" class="button" onclick="display.value += '*'" id="op">
+    </div>
+    <div class="calculator__row">
+      <input type="button" value="4" class="button" onclick="display.value += '4' ">
+      <input type="button" value="5" class="button" onclick="display.value += '5' ">
+      <input type="button" value="6" class="button" onclick="display.value += '6' ">
+      <input type="button" value="-" class="button" onclick="display.value += '-' " id="op">
+    </div>
+    <div class="calculator__row">
+      <input type="button" value="1" class="button" onclick="display.value += '1' ">
+      <input type="button" value="2" class="button" onclick="display.value += '2' ">
+      <input type="button" value="3" class="button" onclick="display.value += '3' ">
+      <input type="button" value="+" class="button" onclick="display.value += '+' " id="op">
+    </div>
+    <div class="calculator__row">
+      <input type="button" value="0" class="button" onclick="display.value += '0' ">
+      <input type="button" value="00" class="button" onclick="display.value += '00' ">
+      <input type="button" value="=" class="button" onclick="display.value = eval(display.value) " id="equal">
+    </div>
+  </div>
+
+</body>
+</html>
